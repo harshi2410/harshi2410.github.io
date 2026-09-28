@@ -1,0 +1,20 @@
+{
+  "name": "harshita-patle-portfolio",
+  "version": "1.0.0",
+  "description": "Editorial Minimalist Portfolio of Harshita Patle — Full-Stack Developer, Agentic AI & Salesforce Engineer",
+  "main": "index.html",
+  "scripts": {
+    "start": "serve . -p 3000",
+    "dev": "python -m http.server 3000"
+  },
+  "keywords": [
+    "portfolio",
+    "harshita-patle",
+    "full-stack",
+    "agentic-ai",
+    "salesforce",
+    "editorial-ui"
+  ],
+  "author": "Harshita Patle <patleharshita2410@gmail.com>",
+  "license": "MIT"
+}
