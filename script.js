@@ -1007,8 +1007,7 @@ function initRoleRotator() {
     "Full-Stack Architecture & MERN",
     "Agentic AI Workflows & RAG",
     "Salesforce CRM & Automation",
-    "Deep Learning & PyTorch Vision",
-    "Express Cybersecurity Middleware"
+    "Deep Learning & PyTorch Vision"
   ];
   let currentIndex = 0;
 
