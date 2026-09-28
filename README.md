@@ -1,1 +1,1 @@
-# ✦ Harshita Patle — Creative Editorial Tech Portfolio
+# ✦ Harshita Patle — Creative Editorial Techie
