@@ -50,6 +50,10 @@
         </div>
       </a>
 
+      <button class="mobile-nav-toggle" id="mobileNavToggle" type="button" aria-label="Open navigation menu" aria-expanded="false" onclick="toggleMobileNav()">
+        <span></span><span></span><span></span>
+      </button>
+
       <!-- Desktop Links -->
       <div class="nav-links">
         <a href="#about" class="nav-link">About</a>
@@ -564,10 +568,12 @@
       <div class="projects-grid" id="projectsGrid">
 
         <!-- 1. Playfoliyo -->
-        <article class="project-card highlight-recruiter" data-category="fullstack">
+        <article class="project-card highlight-recruiter" data-category="fullstack" data-project-key="playfoliyo">
           <div class="project-image-wrap" onclick="openProjectModal('playfoliyo')">
-            <img src="assets/images/playfoliyo.jpg" alt="Playfoliyo Sports Networking Platform">
-            <div class="project-badge-corner">01 // MERN Stack</div>
+            <div class="archive-ui archive-ui-playfoliyo" aria-hidden="true">
+              <div class="playfoliyo-topbar"><b><span>P</span> PLAYFOLIYO</b><div>Home&nbsp;&nbsp; Feed&nbsp;&nbsp; Network&nbsp;&nbsp; Events</div><small>AS</small></div>
+              <div class="playfoliyo-content"><div class="playfoliyo-welcome"><small>ATHLETE WORKSPACE</small><b>Welcome back, Aarav</b><span>Your verified sports profile is live.</span><div><i>VIEW PROFILE</i><i>GO TO FEED</i></div></div><div class="playfoliyo-cards"><section><b>12</b><small>Achievements</small></section><section><b>08</b><small>Connections</small></section><section><b>04</b><small>Upcoming events</small></section></div></div>
+            </div>
           </div>
           <div class="project-content">
             <div>
@@ -595,12 +601,13 @@
         </article>
 
         <!-- 2. Kshetra -->
-        <article class="project-card highlight-recruiter" data-category="fullstack ai">
+        <article class="project-card highlight-recruiter" data-category="fullstack ai" data-project-key="kshetra">
           <div class="project-image-wrap" onclick="openProjectModal('kshetra')">
-            <div style="width: 100%; height: 100%; background: linear-gradient(135deg, #242918, #14170d); display: flex; align-items: center; justify-content: center; color: #a3e635; font-family: var(--font-display); font-size: 1.6rem; letter-spacing: 0.05em;">
-              KSHETRA // GIS
+            <div class="archive-ui archive-ui-kshetra" aria-hidden="true">
+              <div class="archive-ui-topline"><strong>KSHETRA</strong><span>FIELD INTELLIGENCE</span></div>
+              <div class="kshetra-map"><span class="map-chip">NDVI 0.78</span><i class="field field-one"></i><i class="field field-two"></i><i class="field field-three"></i><i class="map-pin"></i></div>
+              <div class="archive-ui-caption"><span>North Field</span><b>Healthy growth</b></div>
             </div>
-            <div class="project-badge-corner">02 // Python • AgriTech</div>
           </div>
           <div class="project-content">
             <div>
@@ -659,12 +666,12 @@
         </article>
 
         <!-- 4. FlowMetrics -->
-        <article class="project-card" data-category="security fullstack">
+        <article class="project-card" data-category="security fullstack" data-project-key="flowmetrics">
           <div class="project-image-wrap" onclick="openProjectModal('flowmetrics')">
-            <div style="width: 100%; height: 100%; background: linear-gradient(135deg, #181d29, #0f121a); display: flex; align-items: center; justify-content: center; color: var(--accent-cyan); font-family: var(--font-display); font-size: 1.6rem; letter-spacing: 0.05em;">
-              FLOWMETRICS
+            <div class="archive-ui archive-ui-flowmetrics" aria-hidden="true">
+              <div class="flow-sidebar"><b>F<span>m</span></b><i></i><i></i><i></i></div>
+              <div class="flow-main"><div class="flow-heading">Workflow overview <span>LIVE</span></div><div class="flow-stats"><div><small>Events / min</small><b>2,481</b></div><div><small>p95 latency</small><b>84ms</b></div></div><div class="flow-chart"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></div>
             </div>
-            <div class="project-badge-corner">04 // Stream Analytics</div>
           </div>
           <div class="project-content">
             <div>
@@ -692,12 +699,13 @@
         </article>
 
         <!-- 5. VerifyQR -->
-        <article class="project-card" data-category="security">
+        <article class="project-card" data-category="security" data-project-key="verifyqr">
           <div class="project-image-wrap" onclick="openProjectModal('verifyqr')">
-            <div style="width: 100%; height: 100%; background: linear-gradient(135deg, #241c2b, #120e17); display: flex; align-items: center; justify-content: center; color: #c084fc; font-family: var(--font-display); font-size: 1.6rem; letter-spacing: 0.05em;">
-              VERIFYQR
+            <div class="archive-ui archive-ui-verifyqr" aria-hidden="true">
+              <div class="verify-topbar"><b><span>◆</span> VerifyQR</b><small>SECURE SCANNER</small></div>
+              <div class="verify-camera"><div class="qr-mark"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div><span></span></div>
+              <div class="verify-status"><i></i> Camera ready <small>ECDSA VERIFIED</small></div>
             </div>
-            <div class="project-badge-corner">05 // Cryptography</div>
           </div>
           <div class="project-content">
             <div>
@@ -884,12 +892,12 @@
         </article>
 
         <!-- 11. VetPaw -->
-        <article class="project-card is-hidden-archive" data-category="fullstack">
+        <article class="project-card is-hidden-archive" data-category="fullstack" data-project-key="vetpaw">
           <div class="project-image-wrap" onclick="openProjectModal('vetpaw')">
-            <div style="width: 100%; height: 100%; background: linear-gradient(135deg, #242218, #14130d); display: flex; align-items: center; justify-content: center; color: #facc15; font-family: var(--font-display); font-size: 1.6rem; letter-spacing: 0.05em;">
-              VETPAW // CLINIC
+            <div class="archive-ui archive-ui-vetpaw" aria-hidden="true">
+              <div class="vetpaw-nav"><b><span>●</span> VETPAW</b><span>My Pets</span><span>Health</span><span>Appointments</span></div>
+              <div class="vetpaw-content"><div class="vetpaw-heading"><div><small>MY PETS &amp; HEALTH TRACKER</small><b>Pet health profile</b></div><span>+ Add pet</span></div><div class="vetpaw-form"><div><small>PET NAME</small><b>Milo</b></div><div><small>SPECIES</small><b>Dog</b></div><div><small>WEIGHT</small><b>12.4 kg</b></div></div><div class="vetpaw-health"><i></i><span>Vaccinations up to date</span><b>View record</b></div></div>
             </div>
-            <div class="project-badge-corner">11 // Django • Python</div>
           </div>
           <div class="project-content">
             <div>
@@ -1072,9 +1080,9 @@
                 <th style="text-align: right;">Quick Actions</th>
               </tr>
             </thead>
-            <tbody>
+            <tbody id="directoryTableBody">
               <!-- 1. Playfoliyo -->
-              <tr class="directory-row" data-category="fullstack" onclick="openProjectModal('playfoliyo')">
+              <tr class="directory-row" data-category="fullstack" data-project-key="playfoliyo" onclick="openProjectModal('playfoliyo')">
                 <td class="dir-num">01</td>
                 <td>
                   <div class="dir-title-cell">
@@ -1088,7 +1096,7 @@
                 <td><div class="dir-actions-cell"><button class="pill-btn sm primary" onclick="event.stopPropagation(); openProjectModal('playfoliyo')">Specs ↗</button><a href="https://github.com/harshi2410/Playfoliyo_prod" target="_blank" rel="noopener noreferrer" class="pill-btn sm" onclick="event.stopPropagation()">GitHub ↗</a></div></td>
               </tr>
               <!-- 2. Kshetra -->
-              <tr class="directory-row" data-category="fullstack ai" onclick="openProjectModal('kshetra')">
+              <tr class="directory-row" data-category="fullstack ai" data-project-key="kshetra" onclick="openProjectModal('kshetra')">
                 <td class="dir-num">02</td>
                 <td>
                   <div class="dir-title-cell">
@@ -1116,7 +1124,7 @@
                 <td><div class="dir-actions-cell"><button class="pill-btn sm primary" onclick="event.stopPropagation(); openProjectModal('rate_limiter')">Specs ↗</button><a href="https://github.com/harshi2410/API-Rate-Limiting-Middleware-Security-Logger" target="_blank" rel="noopener noreferrer" class="pill-btn sm" onclick="event.stopPropagation()">GitHub ↗</a></div></td>
               </tr>
               <!-- 4. FlowMetrics -->
-              <tr class="directory-row" data-category="security fullstack" onclick="openProjectModal('flowmetrics')">
+              <tr class="directory-row" data-category="security fullstack" data-project-key="flowmetrics" onclick="openProjectModal('flowmetrics')">
                 <td class="dir-num">04</td>
                 <td>
                   <div class="dir-title-cell">
@@ -1130,7 +1138,7 @@
                 <td><div class="dir-actions-cell"><button class="pill-btn sm primary" onclick="event.stopPropagation(); openProjectModal('flowmetrics')">Specs ↗</button><a href="https://github.com/harshi2410/flowmetrics" target="_blank" rel="noopener noreferrer" class="pill-btn sm" onclick="event.stopPropagation()">GitHub ↗</a></div></td>
               </tr>
               <!-- 5. VerifyQR -->
-              <tr class="directory-row" data-category="security" onclick="openProjectModal('verifyqr')">
+              <tr class="directory-row" data-category="security" data-project-key="verifyqr" onclick="openProjectModal('verifyqr')">
                 <td class="dir-num">05</td>
                 <td>
                   <div class="dir-title-cell">
@@ -1214,7 +1222,7 @@
                 <td><div class="dir-actions-cell"><button class="pill-btn sm primary" onclick="event.stopPropagation(); openProjectModal('lung_cancer')">Specs ↗</button><a href="https://github.com/harshi2410/ML_Project" target="_blank" rel="noopener noreferrer" class="pill-btn sm" onclick="event.stopPropagation()">GitHub ↗</a></div></td>
               </tr>
               <!-- 11. VetPaw -->
-              <tr class="directory-row" data-category="fullstack" onclick="openProjectModal('vetpaw')">
+              <tr class="directory-row" data-category="fullstack" data-project-key="vetpaw" onclick="openProjectModal('vetpaw')">
                 <td class="dir-num">11</td>
                 <td>
                   <div class="dir-title-cell">

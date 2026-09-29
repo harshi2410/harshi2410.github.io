@@ -1279,7 +1279,64 @@ function initHeroStreamStage() {
   }
 }
 
+function prioritizeArchiveProjects() {
+  const priorityKeys = ['playfoliyo', 'kshetra', 'vetpaw', 'verifyqr', 'flowmetrics'];
+  const grid = document.getElementById('projectsGrid');
+  const directory = document.getElementById('directoryTableBody');
+
+  [
+    { container: grid, selector: '.project-card' },
+    { container: directory, selector: '.directory-row' }
+  ].forEach(({ container, selector }) => {
+    if (!container) return;
+
+    priorityKeys.forEach((key, index) => {
+      const project = container.querySelector(`${selector}[data-project-key="${key}"]`);
+      if (project) container.insertBefore(project, container.children[index] || null);
+    });
+
+    Array.from(container.querySelectorAll(selector)).forEach((project, index) => {
+      if (selector === '.project-card') {
+        const title = project.querySelector('.project-title');
+        const badge = project.querySelector('.project-badge-corner');
+        if (title) title.textContent = title.textContent.replace(/^\d+\.\s*/, `${index + 1}. `);
+        if (badge) badge.textContent = badge.textContent.replace(/^\d+/, String(index + 1).padStart(2, '0'));
+        project.classList.toggle('is-hidden-archive', index >= 6);
+        project.style.display = index >= 6 ? 'none' : 'flex';
+      } else {
+        const number = project.querySelector('.dir-num');
+        if (number) number.textContent = String(index + 1).padStart(2, '0');
+      }
+    });
+  });
+}
+
+function toggleMobileNav() {
+  const button = document.getElementById('mobileNavToggle');
+  const links = document.querySelector('.nav-links');
+  if (!button || !links) return;
+
+  const isExpanded = button.getAttribute('aria-expanded') !== 'true';
+  button.setAttribute('aria-expanded', String(isExpanded));
+  button.setAttribute('aria-label', isExpanded ? 'Close navigation menu' : 'Open navigation menu');
+  button.classList.toggle('is-open', isExpanded);
+  links.classList.toggle('is-open', isExpanded);
+}
+
+function closeMobileNav() {
+  const button = document.getElementById('mobileNavToggle');
+  const links = document.querySelector('.nav-links');
+  if (!button || !links) return;
+
+  button.setAttribute('aria-expanded', 'false');
+  button.setAttribute('aria-label', 'Open navigation menu');
+  button.classList.remove('is-open');
+  links.classList.remove('is-open');
+}
+
 function startInteractiveSystems() {
+  prioritizeArchiveProjects();
+  document.querySelectorAll('.nav-link').forEach(link => link.addEventListener('click', closeMobileNav));
   initCosmicCanvas();
   initRoleRotator();
   init3DCardTilt();
