@@ -1199,7 +1199,7 @@ function toggleCosmicSound() {
       isAudioPlaying = true;
       if (btn) btn.classList.add('active');
       if (label) label.textContent = 'Audio Active';
-      showToast("🌌 Universe Sound playing (rushu.me audio)");
+      showToast("🌌Sound playing (audio)");
     }).catch((err) => {
       console.warn("Audio play prevented:", err);
       showToast("🔊 Click the Universe Audio button to play");
